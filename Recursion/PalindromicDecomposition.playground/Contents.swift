@@ -9,7 +9,7 @@ func palindromicDecompositionHelper(bag: String, slate: inout String, index: Int
     if slate.split(separator: "|").count != 0 && !isPalindrome(word: String(slate.split(separator: "|")[slate.split(separator: "|").count-1])) {
         return
     } else if index == bag.count {
-        slate =  String(Array(slate)[1..<slate.count])
+        slate = String(Array(slate)[1..<slate.count])
         result.append(slate)
         return
     } else {
@@ -21,6 +21,7 @@ func palindromicDecompositionHelper(bag: String, slate: inout String, index: Int
                 slate = oldSlate
             }
         }
+        return
     }
 }
 
@@ -36,5 +37,4 @@ func isPalindrome(word: String) -> Bool {
     return true
 }
 
-print(palindromicDecomposer(input: "eeeeeeeeeeeeeeeeeeee"))
-
+print(palindromicDecomposer(input: "banana"))
