@@ -1,5 +1,3 @@
-import PlaygroundSupport
-
 func selectionSortHelper() {
     let array = [128,582,842,367,459,513,257,920,134,147,826,972,223,56,1212,563]
     print(selectionSort(unsortedArray: array))
