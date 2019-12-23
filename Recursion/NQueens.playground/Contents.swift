@@ -6,28 +6,31 @@ func find_all_arrangements(n: Int) -> [[String]] {
     for index in 0..<n {
         bag.append(index)
     }
-    queenPlacerHelper(slate: &slate, bag: bag, index: 0, boardSize: n-1, result: &results)
+    queenPlacerHelper(slate: &slate, bag: bag, boardSize: n-1, result: &results)
     return converter(results: results)
 }
 
-func queenPlacerHelper(slate: inout [Int], bag: [Int], index: Int, boardSize: Int, result: inout [[Int]]) {
-    //print("slate:\(slate) bag:\(bag) index:\(index) boardSize:\(boardSize)")
-    if index>boardSize && !canQueenBeAttacked(positions: slate)  {
+func queenPlacerHelper(slate: inout [Int], bag: [Int], boardSize: Int, result: inout [[Int]]) {
+    //print("slate:\(slate) bag:\(bag) boardSize:\(boardSize)")
+    let canBeAttacked = canQueenBeAttacked(positions: slate)
+    if slate.count<boardSize && canBeAttacked {
+        return
+    } else if slate.count>boardSize && !canBeAttacked  {
         result.append(slate)
         return
-    } else if index > boardSize {
+    } else if slate.count > boardSize {
         return
     } else {
         for counter in 0...boardSize {
             slate.append(bag[counter])
-            queenPlacerHelper(slate: &slate, bag: bag, index: index+1, boardSize: boardSize, result: &result)
+            queenPlacerHelper(slate: &slate, bag: bag, boardSize: boardSize, result: &result)
             slate.popLast()
         }
     }
 }
 
 func canQueenBeAttacked(positions: [Int]) -> Bool {
-    //print(positions)
+    print(positions)
     for index1 in 0..<positions.count {
         for index2 in 0..<positions.count {
             if index1 != index2 {

@@ -16,7 +16,7 @@ func bracketsHelper(numberLeftRemaining: Int, numberRightRemaining: Int, slate: 
         slate.append("(")
         bracketsHelper(numberLeftRemaining: numberLeftRemaining-1, numberRightRemaining: numberRightRemaining, slate: &slate, result: &result)
         slate.popLast()
-        
+
         slate.append(")")
         bracketsHelper(numberLeftRemaining: numberLeftRemaining, numberRightRemaining: numberRightRemaining-1, slate: &slate, result: &result)
         slate.popLast()
