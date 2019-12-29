@@ -5,11 +5,11 @@ func quickSort() {
 }
 
 func quickSortHelper(array: inout [Int], start: Int, end: Int) {
-    if start >= end  {
+    if start >= end {
         return
     } else {
         let randomIndex = Int.random(in: start...end)
-        array.swapAt(randomIndex, start)
+        array.swapAt(start, randomIndex)
         var index = start
         for i in start+1...end {
             if array[i] < array[start] {
