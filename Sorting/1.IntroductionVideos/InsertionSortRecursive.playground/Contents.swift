@@ -5,9 +5,7 @@ func insertionSort(n: Int, array: inout [Int]) -> [Int]{
         insertionSort(n: n-1, array: &array)
         var counter = n
         while array[counter] < array[counter-1] {
-            let temp = array[counter]
-            array[counter] = array[counter-1]
-            array[counter-1] = temp
+            array.swapAt(counter, counter-1)
             counter -= 1
         }
         return array
