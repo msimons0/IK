@@ -10,7 +10,6 @@ func insertionSort(n: Int, array: inout [Int]) {
     }
 }
 
-
 func insertionSortHelper(array: [Int]) -> [Int] {
     var array = array
     insertionSort(n: array.count, array: &array)

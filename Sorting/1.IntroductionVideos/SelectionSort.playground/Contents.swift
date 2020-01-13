@@ -10,7 +10,7 @@ func selectionSort(unsortedArray: [Int]) -> [Int] {
     
     for currentIndex in 0..<array.count {
         var minimumIndex = currentIndex
-        for index in currentIndex..<array.count {
+        for index in currentIndex+1..<array.count {
             if array[index] < array[minimumIndex] {
                 minimumIndex = index
             }
