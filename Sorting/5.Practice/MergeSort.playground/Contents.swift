@@ -28,7 +28,7 @@ func mergeSort(start: Int, end: Int,  array: inout [Int]){
         return
     }
 }
-
+ 
 func mergeSortHelper() -> [Int] {
     var array = [3456,34,87,23,567,123567,34,567,861,23]
     mergeSort(start: 0, end: array.count-1, array: &array)
