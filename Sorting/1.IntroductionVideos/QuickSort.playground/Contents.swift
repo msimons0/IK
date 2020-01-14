@@ -1,10 +1,10 @@
 func quickSort() {
     var array = [12,21,67,3,77,27,83,14,16,26,77,28]
-    quickSortHelper(array: &array, start: 0, end: array.count-1)
+    quickSortHelper(start: 0, end: array.count-1, array: &array)
     print(array)
 }
 
-func quickSortHelper(array: inout [Int], start: Int, end: Int) {
+func quickSortHelper(start: Int, end: Int, array: inout [Int]) {
     if start >= end {
         return
     } else {
@@ -18,8 +18,8 @@ func quickSortHelper(array: inout [Int], start: Int, end: Int) {
             }
         }
         array.swapAt(start, index)
-        quickSortHelper(array: &array, start: start, end: index-1)
-        quickSortHelper(array: &array, start: index+1, end: end)
+        quickSortHelper(start: start, end: index-1, array: &array)
+        quickSortHelper(start: index+1, end: end, array: &array)
     }
 }
 

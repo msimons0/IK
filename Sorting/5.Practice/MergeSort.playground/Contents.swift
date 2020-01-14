@@ -1,4 +1,4 @@
-func mergeSort(start: Int, end: Int,  array: inout [Int]){
+func mergeSort(start: Int, end: Int,  array: inout [Int]) {
     if start >= end {
         return
     } else {
