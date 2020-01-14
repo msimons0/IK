@@ -1,5 +1,5 @@
 func insertionSort(n: Int, array: inout [Int]) {
-    for i in 1...n-1 {
+    for i in 1..<n {
         var count = i
         while array[count] < array[count-1] {
             array.swapAt(count, count-1)
