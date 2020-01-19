@@ -29,7 +29,7 @@ func addNode(_ number: Int) {
 
 func extractRoot() -> Int {
     binaryTree.swapAt(1, binaryTree.count-1)
-    let root = binaryTree.popLast()
+    let root = binaryTree.popLast()!
     var currentNode = 1, childNode1 = 2, childNode2 = 3
     
     while childNode1 < binaryTree.count && childNode2 < binaryTree.count {
@@ -55,7 +55,7 @@ func extractRoot() -> Int {
             binaryTree.swapAt(childNode1, currentNode)
         }
     }
-    return root!
+    return root
 }
 
 heapSort()

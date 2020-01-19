@@ -9,8 +9,8 @@ func quickSortHelper(start: Int, end: Int, array: inout [Int]) {
         return
     } else {
         let randomIndex = Int.random(in: start...end)
-        array.swapAt(start, randomIndex)
         var index = start
+        array.swapAt(start, randomIndex)
         for i in start+1...end {
             if array[i] < array[start] {
                 index += 1

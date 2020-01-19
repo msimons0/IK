@@ -1,14 +1,14 @@
 func mergeSort(start: Int, end: Int,  array: inout [Int]) {
     if start >= end {
-        return
+         return
     } else {
         let mid = (start+end)/2
         mergeSort(start: start, end: mid, array: &array)
         mergeSort(start: mid+1, end: end, array: &array)
-        var auxArray: [Int] = []
-        var i=start, j=mid+1
-        while i<=mid && j<=end {
-            if array[i]<array[j] {
+        var i = start, j = mid + 1
+        var auxArray:[Int] = []
+        while i <= mid && j <= end {
+            if array[i] < array[j] {
                 auxArray.append(array[i])
                 i += 1
             } else {
@@ -16,11 +16,11 @@ func mergeSort(start: Int, end: Int,  array: inout [Int]) {
                 j += 1
             }
         }
-        while i<=mid {
+        while i <= mid {
             auxArray.append(array[i])
             i += 1
         }
-        while j<=end {
+        while j <= end {
             auxArray.append(array[j])
             j += 1
         }
